@@ -6,8 +6,6 @@ import (
 	"os"
 )
 
-
-
 type Email struct {
 	ID      int
 	Kind    string
@@ -29,16 +27,16 @@ type Person struct {
 	Interest  []Interest
 }
 
-func CreatePerson(ID int,FirstName string,LastName string,UserName string,Gender string , Email []Email,Interest []Interest) Person {
+func CreatePerson(ID int, FirstName string, LastName string, UserName string, Gender string, Email []Email, Interest []Interest) Person {
 
-	return Person {
-		ID : ID,
+	return Person{
+		ID:        ID,
 		FirstName: FirstName,
-		LastName: LastName,
-		UserName: UserName,
-		Gender: Gender,
-		Email: Email,
-		Interest: Interest,
+		LastName:  LastName,
+		UserName:  UserName,
+		Gender:    Gender,
+		Email:     Email,
+		Interest:  Interest,
 	}
 }
 
@@ -80,9 +78,8 @@ func saveJSON(fileName string, key interface{}) {
 }
 
 func main() {
-	
-	
-	person := CreatePerson(1,"James","Snow","hy3n4","E",[]Email{ Email{1,"work","kancad@nomail.com"},Email{2,"fun","hy3n4@nomail.com"}},[]Interest {Interest{1,"Go"},Interest{2,"Python"},Interest{3,"Go"}})
+
+	person := CreatePerson(1, "James", "Snow", "hy3n4", "E", []Email{Email{1, "work", "kancad@nomail.com"}, Email{2, "fun", "hy3n4@nomail.com"}}, []Interest{Interest{1, "Go"}, Interest{2, "Python"}, Interest{3, "Go"}})
 
 	WriteMessage("Reading Operation Started")
 	WriteMessage("Personal Fullname")
